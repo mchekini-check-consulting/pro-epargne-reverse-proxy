@@ -2,11 +2,11 @@ version: '3'
 services:
   pro-epargne-reverse-proxy:
     image: nginx
-    container_name: pro-epargne-reverse-proxy
+    container_name: ci-reverse-proxy
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - "./conf/default.conf:/etc/nginx/conf.d/default.conf"
+      - "./conf/:/etc/nginx/conf.d/"
       - "./private.key:/etc/ssl/private.key"
       - "./certificate.crt:/etc/ssl/certificate.crt"
